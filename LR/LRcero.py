@@ -38,6 +38,8 @@ class LRcero:
                 else:
                     cerradura.agregarIra((transition,nuevaCerradura.getNombreEstado()))
                 self.analizar(nuevaCerradura)
+            else:
+                cerradura.setReduccion("R" + str(self.getPosicionProduccion(p)))
         if not cerradura in self.cerraduras:
             self.cerraduras.append(cerradura)
 
@@ -118,3 +120,9 @@ class LRcero:
                     i=i+1
                     trans= trans+produccion[posicion+i]
         return trans
+    def getPosicionProduccion(self, produccion):
+        aumentada = self.getGramaticaAumentada()
+        for i in range(len(aumentada)):
+            if aumentada[i].getProduccion().split("°")[1] == produccion.split("°")[0]:
+                return i
+        return -1

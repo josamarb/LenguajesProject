@@ -29,3 +29,6 @@ class Cerradura:
 
     def setReduccion(self,R):
         self.reduccion = R
+
+    def getReduccion(self):
+        return self.reduccion

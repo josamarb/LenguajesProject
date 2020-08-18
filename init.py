@@ -8,6 +8,9 @@ if __name__ == '__main__':
 
     lr = LRcero(G)
 
+    caa = "casas"
+
+    print(caa.split("c"))
 
     cerraduras = lr.cerraduras
     print(len(cerraduras))
@@ -15,6 +18,7 @@ if __name__ == '__main__':
         print(c.estado)
         print("Accion"+str(c.getActions()))
         print("IR_A" + str(c.getIra()))
+        print("Reduccion "+str(c.getReduccion()))
         for i in c.prod:
             print(i.getNoTerminal()+" -> "+i.getProduccion())
         print("----------------------------------------------")
