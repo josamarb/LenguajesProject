@@ -11,5 +11,5 @@ class Produccion:
     def getProduccion(self):
         return self.produccion
 
-    def agregarPunto(self):
-        self.produccion = "°"+self.produccion
+    def agregarPunto(self,produccion):
+        return "°"+produccion

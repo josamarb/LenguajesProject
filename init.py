@@ -1,17 +1,21 @@
 from Gramatica.Produccion import Produccion
 from Gramatica.Gramatica import Gramatica
-from LR.LRcero import LRcero
+from LR0.LRcero import LRcero
 
 if __name__ == '__main__':
+
     producciones = [Produccion("E","E+ni"),Produccion("E","ni")]
     G = Gramatica(["E"],["+","ni"],Produccion("E","E+ni"),producciones)
 
-    lr = LRcero(G)
+    #producciones = [Produccion("S", "L=R"), Produccion("S", "R"),Produccion("L", "*R"),Produccion("L", "id"),Produccion("R", "L")]
+    #G = Gramatica(["S","L","R"], ["*", "id","="], Produccion("S", "L=R"), producciones)
 
+    lr = LRcero(G)
+    """
     caa = "casas"
 
     print(caa.split("c"))
-
+    """
     cerraduras = lr.cerraduras
     print(len(cerraduras))
     for c in cerraduras:

@@ -32,3 +32,14 @@ class Cerradura:
 
     def getReduccion(self):
         return self.reduccion
+
+
+    def imprimirCerradura(self):
+        print("---------------Inicio Cerradura-----------------")
+        print(self.estado)
+        print("Accion" + str(self.getActions()))
+        print("IR_A" + str(self.getIra()))
+        print("Reduccion " + str(self.getReduccion()))
+        for i in self.prod:
+            print(i.getNoTerminal() + " -> " + i.getProduccion())
+        print("---------------Fin Cerradura-----------------")
